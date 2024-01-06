@@ -10,7 +10,7 @@ const app = express()
 app.use(bodyParser.json())
 app.use(multer().any())
 
-
+mongoose.set('strictQuery', false)
 mongoose.connect("mongodb+srv://123:1234@cluster0.pf4v08v.mongodb.net/project-3",{
     useNewUrlparser : true
 })
@@ -22,3 +22,7 @@ app.use("/",route)
 app.listen(process.env.PORT ||3000,function(){
     console.log("server running on port"+" "+ (process.env.PORT || 3000) )
 })
+
+
+
+
